@@ -32,7 +32,7 @@ public:
 
 	size_t Num() const
 	{
-		return Count;
+		return Num;
 	};
 
 	T& operator[](size_t i)
@@ -56,16 +56,6 @@ private:
 	int Max;
 };
 
-struct FString : public TArray<wchar_t>
-{
-	std::string ToString() const
-	{
-		int size = WideCharToMultiByte(CP_UTF8, 0, Data, Count - 1, nullptr, 0, nullptr, nullptr);
-		std::string str(size, 0);
-		WideCharToMultiByte(CP_UTF8, 0, Data, Count - 1, &str[0], size, nullptr, nullptr);
-		return str;
-	}
-};
 
 class FScriptInterface
 {
@@ -115,7 +105,7 @@ struct FScriptDelegate
 	unsigned char UnknownData[0x10];
 };
 
-class UClass;
+
 
 class UObject
 {
@@ -129,7 +119,7 @@ public:
 	FName    Name;
 	UObject* Inner;
 	UObject* ObjectArchetype;
-	class UClass*		Class;
+	
 };
 
 class UField : public UObject
@@ -171,14 +161,16 @@ class UFunction : public UStruct
 {
 
 public:
-	int32_t FunctionFlags;
-	char    pad_0134[0x8];
-	FName   FriendlyName;
-	int16_t NumParams;
-	int16_t ParamSize;
-	int32_t ReturnValueOffset;
-	char    pad_014C[0x8];
-	void*   Function;
+
+int32_t FunctionFlags;
+  char    pad_0134[0x8];
+  FName   FriendlyName;
+  int16_t NumParams;
+  int16_t ParamSize;
+  int32_t ReturnValueOffset;
+  char    pad_014C[0x8];
+  void*   Function;
+
 };
 
 class UState : public UStruct
@@ -196,14 +188,16 @@ public:
 class UProperty : public UField
 {
 public:
-	int32_t ArrayDim;
-	int32_t ElementSize;
-	FQWord  PropertyFlags;
-	char    pad_0080[0x10];
-	int32_t PropertySize;
-	char    pad_0094[0x4];
-	int32_t Offset;
-	char    pad_009C[0x2c];
+
+int32_t ArrayDim;
+  int32_t ElementSize;
+  FQWord  PropertyFlags;
+  char    pad_0080[0x10];
+  int32_t PropertySize;
+  char    pad_0094[0x4];
+  int32_t Offset;
+  char    pad_009C[0x2c];
+
 };
 
 class UByteProperty : public UProperty
