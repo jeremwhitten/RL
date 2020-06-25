@@ -1,0 +1,11 @@
+﻿  GenericTypes.cpp
+  Generating Code...
+  Compiling...
+  ObjectsStore.cpp
+c:\users\jeremy\desktop\rl-master\target\rocketleague\objectsstore.cpp(31): warning C4244: 'argument': conversion from 'int64_t' to '::size_t', possible loss of data
+  NamesStore.cpp
+c:\users\jeremy\desktop\rl-master\target\rocketleague\namesstore.cpp(63): warning C4244: 'argument': conversion from 'int64_t' to '::size_t', possible loss of data
+c:\users\jeremy\desktop\rl-master\target\rocketleague\namesstore.cpp(68): warning C4244: 'argument': conversion from 'int64_t' to '::size_t', possible loss of data
+  Generating Code...
+  RocketLeague.vcxproj -> C:\Users\Jeremy\Desktop\RL-master\x86\Debug\RocketLeague.dll
+  RocketLeague.vcxproj -> C:\Users\Jeremy\Desktop\RL-master\x86\Debug\RocketLeague.pdb (Partial PDB)
